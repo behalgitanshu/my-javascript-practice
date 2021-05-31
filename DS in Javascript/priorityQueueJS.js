@@ -15,7 +15,7 @@ function PriorityQueue(comparator) {
 		heap[b] = tmp;
 	};
 
-	const insert = (item) => {
+	const push = (item) => {
 		heap.push(item);
 		let i = heap.length - 1;
 		// compare parent with this element, if true then return else continue till root
@@ -40,10 +40,7 @@ function PriorityQueue(comparator) {
 		let current = 0;
 		while (hasLeft(current)) {
 			let smallerChild = left(current);
-			if (
-				hasRight(current) &&
-				comparator(heap[right(current)], heap[left(current)])
-			)
+			if (hasRight(current) && comparator(heap[right(current)], heap[left(current)]))
 				smallerChild = right(current);
 
 			if (comparator(heap[current], heap[smallerChild])) break;
@@ -71,7 +68,7 @@ function PriorityQueue(comparator) {
 	};
 
 	return {
-		insert,
+		push,
 		pop,
 		peek,
 		size,

@@ -63,7 +63,7 @@ function PriorityQueue(comparator) {
 		return heap.length == 0;
 	};
 
-	const printQueue = () => {
+	const print = () => {
 		console.log(heap);
 	};
 
@@ -73,6 +73,6 @@ function PriorityQueue(comparator) {
 		peek,
 		size,
 		isEmpty,
-		printQueue,
+		print,
 	};
 }
